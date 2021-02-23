@@ -27,10 +27,10 @@ export class SlipServiceService {
   constructor(private http:HttpClient) { }
 
   public debitusingslip(debit:slipTransactions){    
-    return this.http.put("http://localhost:8085/transactions/debitUsingSlip",debit,{responseType: 'text'});
+    return this.http.put("https://pecunia-bank-be.herokuapp.com/transactions/debitUsingSlip",debit,{responseType: 'text'});
   }
   public creditusingslip(credit:slipTransactions){   
-    return this.http.put("http://localhost:8085/transactions/creditUsingSlip",credit,{responseType: 'text'});
+    return this.http.put("https://pecunia-bank-be.herokuapp.com/transactions/creditUsingSlip",credit,{responseType: 'text'});
   }
 
 }

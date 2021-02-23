@@ -11,7 +11,7 @@ import { MessageDto } from '../dto/MessageDto';
 export class EmployeeServiceService {
   
 
-  baseEmployeeUrl="http://localhost:8085/employees";
+  baseEmployeeUrl="https://pecunia-bank-be.herokuapp.com/employees";
 
   constructor(private client:HttpClient ){  }
 
