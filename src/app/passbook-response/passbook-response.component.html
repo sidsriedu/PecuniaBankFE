@@ -1,0 +1,48 @@
+<div class="s">
+
+    <br><br><br><br>
+    <div class="row">
+        <div class="col-md-2 "></div>
+        <div class="col-md-8">
+            <div class="card">
+                <br><br>
+                <h3 class="card-title text-center b"> Transactions</h3>
+                <div class="container">
+                    <div class="container a ">
+                        <br>
+                        <table class="table table-striped">
+                            <caption></caption>
+                            <thead>
+                                <tr>
+                                    <th scope="row">TID</th>
+                                    <th scope="row">Trans-type</th>
+                                    <th scope="row">Amount</th>
+                                    <th scope="row">Date</th>
+                                    <th scope="row">Trans-From</th>
+                                    <th scope="row">Trans-To</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let transaction of transacs">
+                                    <td>{{transaction.transId}}</td>
+                                    <td>{{transaction.transType}}</td>
+                                    <td>{{transaction.transAmount}}</td>
+                                    <td>{{transaction.transDate}}</td>
+                                    <td>{{transaction.transFrom}}</td>
+                                    <td>{{transaction.transTo}}</td>
+                                </tr>
+                            </tbody>
+                        </table><br>
+                        <div class="text-center">
+                            <button class="btn btn-primary button" (click)="home()">Home</button>
+                        </div>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 "></div>
+    </div><br><br><br>
+    <div>
+    </div>
+</div>

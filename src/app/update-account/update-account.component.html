@@ -1,0 +1,51 @@
+<div class="s">
+    <br>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <br><br>
+            <div class="card">
+                <img class="center" src="assets\images\user.png" width="200" height="200">
+                <div class="card-body">
+                    <div class="container">
+                        <h3 class=" card=title text-center b ">Update Account</h3>
+                        <br>
+                        <div class="card">
+                            <div class="container">
+                                <div class="container ">
+                                    <br>
+                                    <form>
+                                        <div class="form-group">
+                                            <label>Enter AccountId :</label>
+                                            <input type="text" name="accountId" [(ngModel)]="customer.account.accountId"
+                                                class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Enter Customer Name :</label>
+                                            <input type="text" name="customerName" [(ngModel)]="customer.customerName"
+                                                class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Enter Customer Contact :</label>
+                                            <input type="text" name="contactNumber" [(ngModel)]="customer.contactNumber"
+                                                maxlength="10" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Enter Customer Address :</label>
+                                            <input type="text" name="address" [(ngModel)]="customer.address"
+                                                class="form-control">
+                                            <br><br>
+                                            <input type="submit" value="Update" (click)="updateAccount()"
+                                                class="btn btn-success">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div><br><br><br>
+</div>

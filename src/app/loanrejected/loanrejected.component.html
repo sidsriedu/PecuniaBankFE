@@ -1,0 +1,47 @@
+<div class="s">
+    <br><br><br><br>
+    <div class="row">
+        <div class="col-md-1 "></div>
+        <div class="col-md-10">
+            <div class="card">
+                <br><br>
+                <h3 class="card-title text-center b">Accepted loans </h3>
+
+                <div>
+                    <br>
+                    <table class="table table-striped">
+
+                        <thead>
+                            <tr>
+                                <th>ACCOUNT ID</th>
+                                <th>CREDIT SCORE</th>
+                                <th>LOAN STATUS</th>
+                                <th>LOAN TYPE</th>
+                                <th>LOAN ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let e of loanrejects">
+                                <td> {{e.accountId}} </td>
+                                <td>{{e.creditScore}}</td>
+                                <td> {{e.loanStatus}} </td>
+                                <td> {{e.loanType}} </td>
+                                <td> {{e.loanId}} </td>
+                                <td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br><br><br><br>
+                    <br>
+                    <div class="text-center">
+                        <button class="btn btn-primary button" (click)="home()">Home</button>
+                    </div>
+                    <br><br><br>
+                </div>
+            </div><br><br><br>
+        </div>
+        <div class="col-md-1 "></div>
+    </div><br><br><br>
+    <div>
+    </div>
+</div>

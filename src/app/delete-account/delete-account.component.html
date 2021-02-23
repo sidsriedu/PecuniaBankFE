@@ -1,0 +1,36 @@
+<div class="s">
+    <br>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <br><br><br><br>
+            <div class="card">
+                <img class="center" src="assets\images\user.png" width="200" height="200">
+                <div class="card-body">
+                    <div class="container">
+                        <h3 class=" card=title text-center b ">Delete Account</h3>
+                        <br>
+                        <div class="card">
+                            <div class="container">
+                                <div class="container ">
+                                    <br>
+                                    <form>
+                                        <div class="form-group">
+                                            <label>Enter AccountId :</label>
+                                            <input type="text" id="accountId" required [(ngModel)]="accountId"
+                                                name="accountId" class="form-control">
+                                            <br>
+                                            <button type="submit" class="btn btn-danger"
+                                                (click)="DeleteAccount()">Delete</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div><br><br><br><br><br><br><br>
+</div>

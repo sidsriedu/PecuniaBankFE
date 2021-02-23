@@ -1,0 +1,34 @@
+<div class="container">
+    <table class="table table-striped" *ngIf="loanrequests && loanrequests.length > 0  else elseBlock">
+        <thead>
+        <tr>
+            <th>ACCOUNT ID</th>
+            <th>LOAN AMOUNT</th>
+            <th>LOAN TENURE</th>
+            <th>CREDIT SCORE</th>
+            <th>LOAN ROI</th>
+            <th>LOAN STATUS</th>
+            <th>LOAN TYPE</th>
+            <th>LOAN ID</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of loanrequests">
+                <td> {{e.accountId}} </td>
+                <td> {{e.loanAmount}} </td>
+                <td> {{e.loanTenure}} </td>
+                <td>{{e.creditScore}}</td>
+                <td> {{e.loanRoi}} </td>
+                <td> {{e.loanStatus}} </td>
+                <td> {{e.loanType}} </td>
+                <td> {{e.loanId}} </td>
+                
+                <td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #elseBlock>
+        <h4> There are no loans applied to display! </h4>
+    </ng-template>
+
+</div>

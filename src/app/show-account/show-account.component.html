@@ -1,0 +1,94 @@
+<div class="s">
+    <div class="container">
+        <br><br><br><br>
+        <div class="row">
+            <div class="col-md-2 "></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <br><br>
+                    <img class="center" src="assets\images\user.png" width="200" height="200"><br>
+                    <h3 class="card-title text-center b">Account Details</h3>
+                    <div class="container">
+                        <div class="container a ">
+                            <br>
+                            <table *ngIf="check" class="table">
+                                <thead>
+                                    <tr>
+                                        <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AccountId
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{customer.account.accountId}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CustomerName&nbsp;&nbsp;&nbsp;
+                                            :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{customer.customerName}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UserName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{customer.userName}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ContactNumber &nbsp;&nbsp;&nbsp;
+                                            :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{customer.contactNumber}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AadharNumber&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{customer.aadharNumber}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PanNumber&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                            :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{customer.panNumber}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DateOfBirth
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                            :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{customer.dateOfBirth}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{customer.gender}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{customer.address}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Branch
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{customer.account.branch}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AccountType&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                            :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{customer.account.accountType}}</th>
+                                    </tr>
+                                </thead>
+                            </table><br>
+                            <button class="btn btn-primary button center" (click)="home()">Home</button>
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 "></div>
+        </div><br><br><br><br><br>
+    </div>
+</div>

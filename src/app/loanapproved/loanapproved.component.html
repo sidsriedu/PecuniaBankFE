@@ -1,0 +1,60 @@
+<div class="s">
+    <br><br><br><br>
+    <div class="row">
+        <div class="col-md-1 "></div>
+        <div class="col-md-10">
+            <div class="card">
+                <br><br>
+                <h3 class="card-title text-center b">Accepted loans </h3>
+
+                <div>
+                    <br>
+                    <table class="table table-striped">
+                        <caption></caption>
+                        <thead>
+                            <tr>
+                                <th>ACCOUNT ID</th>
+                                <th>LOAN DUE</th>
+                                <th>LOAN TENURE</th>
+                                <th>CREDIT SCORE</th>
+                                <th>LOAN ROI</th>
+                                <th>LOAN STATUS</th>
+                                <th>LOAN TYPE</th>
+                                <th>LOAN EMI</th>
+                                <th>LOAN ID</th>
+                                <th>PAY EMI(MONTH)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let e of loandisbursals">
+                                <td> {{e.accountId}} </td>
+                                <td> Rs.{{e.loanAmount|number:'0.1-1'}} </td>
+                                <td> {{e.loanTenure}} </td>
+                                <td>{{e.creditScore}}</td>
+                                <td> {{e.loanRoi}} </td>
+                                <td> {{e.loanStatus}} </td>
+                                <td> {{e.loanType}} </td>
+                                <td> Rs.{{e.emi|number:'0.1-1'}} </td>
+                                <td> {{e.loanId}} </td>
+                                <td>
+                                    <button type="button" class="btn btn-large btn-block btn-success"
+                                        (click)=updateBal(e)>Pay EMI</button>
+                                </td>
+                                <td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br><br><br><br>
+                    <br>
+                    <div class="text-center">
+                        <button class="btn btn-primary button" (click)="home()">Home</button>
+                    </div>
+                    <br><br><br>
+                </div>
+            </div><br><br><br>
+        </div>
+        <div class="col-md-1 "></div>
+    </div><br><br><br>
+    <div>
+    </div>
+</div>

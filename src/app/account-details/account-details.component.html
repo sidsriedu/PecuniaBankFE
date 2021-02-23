@@ -1,0 +1,61 @@
+<div class="s">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <br><br><br><br>
+            <div class="card">
+                <img class="center" src="assets\images\user.png" width="250" height="250">
+                <div class="card-body">
+                    <div class="container">
+                        <h3 class=" card=title text-center b ">Account</h3>
+                        <br>
+                        <div class="card">
+                            <div class="container">
+                                <div class="container ">
+                                    <br>
+                                    <form name="form" (ngSubmit)="f.form.valid && accountValidatiion()" #f="ngForm"
+                                        novalidate>
+                                        <div class="form-group">
+                                            <label for="accountNo">Enter Account no:</label>
+                                            <input type="text" class="form-control" placeholder="should be 12 digits"
+                                                pattern=[0-9]* minlength="12" maxlength="12" name="accountNo"
+                                                [(ngModel)]="accountId" #accountNo="ngModel"
+                                                [ngClass]="{ 'is-invalid': f.submitted && accountNo.invalid }"
+                                                required />
+                                            <div *ngIf='f.submitted && accountNo.invalid && accountNo.errors '
+                                                class="invalid-feedback c">
+                                                <div [hidden]='!accountNo.errors.required'> *Provide Account No. </div>
+                                                <div *ngIf='accountNo.errors.pattern'>*Account Id should be only numbers
+                                                </div>
+                                                <div *ngIf="accountNo.errors.maxlength"> Account no should be of 12
+                                                    digits
+                                                </div>
+                                                <div *ngIf="accountNo.errors.minlength"> Account no should be of 12
+                                                    digits
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group text-center">
+                                            <button class="btn btn-primary">Open</button>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <button class="btn btn-primary" (click)="AddAccount()">Create</button>
+                                        </div>
+                                        <br>
+                                    </form>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <br><br><br><br>
+        </div>
+        <div class="col-md-4 "></div>
+    </div>
+</div>

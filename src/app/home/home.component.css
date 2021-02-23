@@ -1,0 +1,69 @@
+.a{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+
+    
+}
+.b{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+
+    
+}
+.l{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+
+  
+}
+
+.d{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+
+    
+}
+.c{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;   
+}
+
+.s{
+    background-color:darkslategrey;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+
+  .p{
+    background-color:honeydew;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .f{
+    background-color:khaki;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .button {width: 100px;}
+  .button1 {width: 150px;}
+
+  .m{
+    background-image: url("src\assets\images\background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }

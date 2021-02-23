@@ -1,0 +1,136 @@
+<div class="s">
+    <br>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <br><br>
+            <div class="card">
+                <img class="center" src="assets\images\user.png" width="200" height="200">
+                <div class="card-body">
+                    <div class="container">
+                        <h3 class=" card=title text-center b ">New Account</h3>
+                        <br>
+                        <div class="card">
+                            <div class="container">
+                                <div class="container ">
+                                    <br>
+                                    <form #customerForm="ngForm">
+                                        <br><br>
+                                        <div class="form-group">
+                                            <label>Enter CustomerName:</label>
+                                            <input required type="text" id="customerName" required
+                                                [(ngModel)]="customer.customerName" name="customerName"
+                                                class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Enter UserName :</label>
+                                            <input type="text" id="userName" required [(ngModel)]="customer.userName"
+                                                name="userName" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Enter Contact Number:</label>
+                                            <input type="text" pattern=[0-9]* minlength="10" maxlength="10"
+                                                [(ngModel)]="customer.contactNumber" name="contactNumber"
+                                                class="form-control" id="contactNumber" #contactNumber="ngModel"
+                                                required>
+                                            <div *ngIf="contactNumber.errors  && contactNumber.dirty && contactNumber.touched"
+                                                class="alert alert-danger">
+                                                <div *ngIf="contactNumber.errors.required">contactNumber required</div>
+                                                <div *ngIf="contactNumber.errors.minlength">contactNumber should be 10
+                                                    digits</div>
+                                                <div [hidden]="!contactNumber.errors.pattern"> & No charecters are
+                                                    allowed</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Enter Aadhar Number:</label>
+                                            <input type="text" pattern=[0-9]* minlength="12" maxlength="12"
+                                                [(ngModel)]="customer.aadharNumber" name="aadharNumber"
+                                                class="form-control" id="aadharNumber" #aadharNumber="ngModel" required>
+                                            <div *ngIf="aadharNumber.errors  && aadharNumber.dirty && aadharNumber.touched"
+                                                class="alert alert-danger">
+                                                <div *ngIf="aadharNumber.errors.required">AadharNumber required</div>
+                                                <div *ngIf="aadharNumber.errors.minlength">AadharNumber should be 12
+                                                    digits</div>
+                                                <div *ngIf="aadharNumber.errors.maxlength">AadharNumber should be 12
+                                                    digits</div>
+                                                <div [hidden]="!aadharNumber.errors.pattern">& No charecters are allowed
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Enter PanNumber:</label>
+                                            <input type="text" pattern="[a-zA-z]{5}[0-9]{4}[a-zA-Z]{1}" minlength="10"
+                                                maxlength="10" [(ngModel)]="customer.panNumber" name="panNumber"
+                                                class="form-control" id="panNumber" #panNumber="ngModel" required>
+                                            <div *ngIf="panNumber.errors  && panNumber.dirty && panNumber.touched"
+                                                class="alert alert-danger">
+                                                <div *ngIf="panNumber.errors.required">panNumber required</div>
+                                                <div *ngIf="panNumber.errors.minlength">panNumber should be 10 digits
+                                                </div>
+                                                <div [hidden]="!panNumber.errors.pattern">First Five characters should
+                                                    be alphabets,next 4 should be digits and last character must be
+                                                    alphabet</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Enter DateOfBirth:</label>
+                                            <input type="text" id="dateOfBirth" required
+                                                [(ngModel)]="customer.dateOfBirth" type="date" name="dateOfBirth"
+                                                class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="gender">Select Gender</label><br>
+                                            <input type="radio" name="gender">
+                                            <label for="male">Male</label><br>
+                                            <input type="radio" name="gender">
+                                            <label for="female">Female</label><br>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Enter Address:</label>
+                                            <input type="text" id="address" required [(ngModel)]="customer.address"
+                                                pattern="^[A-Za-z0-9]+$" name="address" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Enter Account ID:</label>
+                                            <input type="text" pattern=[0-9]* minlength="12" maxlength="12"
+                                                [(ngModel)]="customer.account.accountId" name="accountId"
+                                                class="form-control" id="accountId" #accountId="ngModel" required>
+
+                                            <div *ngIf="accountId.errors  && accountId.dirty && accountId.touched"
+                                                class="alert alert-danger">
+                                                <div *ngIf="accountId.errors.required">AccountId required</div>
+                                                <div *ngIf="accountId.errors.minlength">AccountId should be 12 digits
+                                                </div>
+
+                                                <div [hidden]="!accountId.errors.pattern">& No characters are allowed
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Enter Branch :</label>
+                                            <input type="text" id="branch" required
+                                                [(ngModel)]="customer.account.branch" name="branch"
+                                                class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Enter AccountType : </label>
+                                            <input type="text" id="accountType" required
+                                                [(ngModel)]="customer.account.accountType" name="accountType"
+                                                class="form-control">
+                                        </div>
+                                        <br><br>
+                                        <button type="submit" class="btn btn-success center"
+                                            (click)="AddAccount()">Submit</button>
+                                            <br>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div><br><br><br>
+</div>

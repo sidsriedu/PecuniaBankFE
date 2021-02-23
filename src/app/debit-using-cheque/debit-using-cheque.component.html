@@ -1,0 +1,93 @@
+<div class="s">
+
+    <br><br><br><br>
+    <div class="row">
+        <div class="col-md-4 "></div>
+        <div class="col-md-4">
+            <div class="card">
+                <br>
+                <img class="center" src="assets\images\cheque.png" width="150" height="120">
+                <br>
+                <h3 class="card-title text-center b">Debit amount using cheque</h3>
+                <div class="container">
+                    <div class="container a ">
+                        <br>
+                        <form name="form" (ngSubmit)="f.form.valid && debit_using_cheque()" #f="ngForm" novalidate>
+                            <div class="form-group">
+                                <label for="payeeAccountNo"> Account no:</label>
+                                <input type="text" class="form-control" placeholder="should be 12 digits" pattern=[0-9]*
+                                    minlength="12" maxlength="12" name="payeeAccountNo"
+                                    [(ngModel)]="cheque.payeeAccountNo" #payeeAccountNo="ngModel"
+                                    [ngClass]="{ 'is-invalid': f.submitted && payeeAccountNo.invalid }" required />
+                                <div *ngIf='f.submitted && payeeAccountNo.invalid && payeeAccountNo.errors '
+                                    class="invalid-feedback c">
+                                    <div [hidden]='!payeeAccountNo.errors.required'> *Provide Amount </div>
+                                    <div *ngIf='payeeAccountNo.errors.pattern'>*Account Id should be only numbers
+                                    </div>
+                                    <div *ngIf="payeeAccountNo.errors.maxlength"> Account no should be of 12 digits
+                                    </div>
+                                    <div *ngIf="payeeAccountNo.errors.minlength"> Account no should be of 12 digits
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="amount">Amount : </label>
+                                <input type="number" class="form-control" placeholder="should be between 100-200000"
+                                    min="100" max="200000" pattern=[0-9]* name="amount" [(ngModel)]="cheque.amount"
+                                    #amount="ngModel" [ngClass]="{ 'is-invalid': f.submitted && amount.invalid }"
+                                    required />
+                                <div *ngIf='f.submitted && amount.invalid && amount.errors ' class="invalid-feedback c">
+                                    <div [hidden]='!amount.errors.required'> *Provide Amount </div>
+                                    <div *ngIf='amount.errors.pattern'>*Amount should be only numbers</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="chequeNo">chequeNo : </label>
+                                <input type="text" class="form-control" placeholder="should be 6 digits only"
+                                    minlength="6" maxlength="6" name="chequeNo" [(ngModel)]="cheque.chequeNo"
+                                    #chequeNo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && chequeNo.invalid }"
+                                    required />
+                                <div *ngIf='f.submitted && chequeNo.invalid && chequeNo.errors '
+                                    class="invalid-feedback c">
+                                    <div [hidden]='!chequeNo.errors.required'> *Provide chequeNo </div>
+                                    <div *ngIf='chequeNo.errors.pattern'>*chequeNo should be only numbers</div>
+                                    <div *ngIf="chequeNo.errors.maxlength"> chequeNo should be of 6 digits</div>
+                                    <div *ngIf="chequeNo.errors.minlength"> chequeNo should be of 6 digits</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ifsc">IFSC code : </label>
+                                <input type="text" class="form-control"
+                                    placeholder="Should be alphanumeric and 10 characters only" name="ifsc"
+                                    [(ngModel)]="cheque.ifsc" #ifsc="ngModel" minlength="10" maxlength="10"
+                                    [ngClass]="{ 'is-invalid': f.submitted && ifsc.invalid }" required />
+                                <div *ngIf='f.submitted && ifsc.invalid && ifsc.errors ' class="invalid-feedback c">
+                                    <div [hidden]='!ifsc.errors.required'> *Provide ifsc </div>
+                                    <div *ngIf='ifsc.errors.pattern'>*ifsc should be only numbers</div>
+                                    <div *ngIf="ifsc.errors.maxlength"> ifsc should be of 10 digits</div>
+                                    <div *ngIf="ifsc.errors.minlength"> ifsc should be of 10 digits</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="issueDate">Cheque issue date : </label>
+                                <input type="datetime-local" class="form-control"
+                                    placeholder="Should be within last 3 months up to present date" name="issueDate"
+                                    [(ngModel)]="cheque.issueDate" #issueDate="ngModel"
+                                    [ngClass]="{ 'is-invalid': f.submitted && issueDate.invalid }" required />
+                                <div *ngIf="f.submitted && issueDate.invalid" class="invalid-feedback c">
+                                    <div *ngIf="issueDate.errors.required">*Cheque issue date is required</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group text-center">
+                                <button class="btn btn-primary">Debit</button>
+                            </div>
+                            <br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 "></div>
+    </div><br><br><br><br><br>
+</div>

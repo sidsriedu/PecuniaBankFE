@@ -1,0 +1,253 @@
+<div class="row pt-5">
+    <div class="col-md-6 mx-auto">
+        <div class="card rounded-0">
+            <div class="card-header">
+                <h3 class="mb-0">
+                    Employee Registration
+                </h3>
+            </div>
+            <div class="card-body">
+                <form class="form" #registrationForm="ngForm"  (ngSubmit)="registerEmployee(registrationForm)" novalidate>
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control rounded-0" #name="ngModel" pattern="^[a-zA-Z\\.\\ ]{2,}$" required name="name"
+                                    [class.is-invalid]="name.invalid && name.touched" ngModel>
+                        <div class="text-danger" *ngIf="name.invalid && name.touched">
+                            <small *ngIf="name.errors.required">Name is required</small>
+                            <small *ngIf="name.errors.pattern">Name must contain atleast two letters</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Phone Number</label>
+                        <input type="tel" class="form-control rounded-0" #phone="ngModel" required pattern="^[6789]{1}[0-9]{9}$" name="phone"
+                                    [class.is-invalid]="phone.invalid && phone.touched"  ngModel>
+                        <div class="text-danger" *ngIf="phone.invalid && phone.touched">
+                            <small *ngIf="phone.errors.required">Phone Number is required</small>
+                            <small *ngIf="phone.errors.pattern">must start with 6,7,8 or 9 and contains 10 digits</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="email" class="form-control" #email="ngModel" required pattern="^[a-zA-Z0-9]{5,15}@gmail.com$" name="email"
+                                    [class.is-invalid]="email.invalid && email.touched" ngModel>
+                        <div class="text-danger" *ngIf="email.invalid && email.touched">
+                            <small *ngIf="email.errors.required">Phone Number is required</small>
+                            <small *ngIf="email.errors.pattern">must start with 6,7,8 or 9 and contains 10 digits</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input type="password" #password="ngModel" required pattern="^[a-zA-Z0-9]{5,15}$" name="password"
+                                    [class.is-invalid]="password.invalid && password.touched" class="form-control" ngModel>
+                        <div class="text-danger" *ngIf="password.invalid && password.touched">
+                            <small *ngIf="password.errors.required">password is required</small>
+                            <small *ngIf="password.errors.pattern">do not contain any special character contains atleast 5 character</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Confirm Password</label>
+                        <input type="password" class="form-control" required #cPassword="ngModel" pattern="^{{password.value}}$" 
+                                    [class.is-invalid]="cPassword.invalid && cPassword.touched" name="cPassword" ngModel>
+                        <div class="text-danger" *ngIf="cPassword.invalid && cPassword.touched">
+                            <small *ngIf="cPassword.errors.required">password is required</small>
+                            <small *ngIf="cPassword.errors.pattern">Password didn't match</small>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary float-right" type="submit" [disabled]="name.invalid || phone.invalid || email.invalid || password.invalid || cPassword.invalid">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div style="text-align: center;">
+    <br><h2>Employee Registration</h2><br>
+</div>
+<div class="row">
+    <div class="col-md-6 mx-auto">
+<form #registrationForm="ngForm"  (ngSubmit)="registerEmployee(registrationForm)" novalidate>
+<table class="table table-borderless" style="margin: auto;width: 50% !important; ">
+    <tbody>
+      <tr>
+        <td scope="row">Enter Name </td>
+        <td>
+            <div class="form-group">
+                <input type="text" #name="ngModel" pattern="^[a-zA-Z\\.\\ ]{2,}$" required name="name"
+                [class.is-invalid]="name.invalid && name.touched" class="form-control" ngModel>
+                <div class="text-danger" *ngIf="name.invalid && name.touched">
+                    <small *ngIf="name.errors.required">Name is required</small>
+                    <small *ngIf="name.errors.pattern">Name must contain atleast two letters</small>
+                </div>
+            </div>
+        </td>
+      </tr>
+      <tr>
+        <td scope="row">Enter PhoneNumber </td>
+        <td>
+            <div class="form-group">
+                <input type="tel" #phone="ngModel" required pattern="^[6789]{1}[0-9]{9}$" name="phone"
+                [class.is-invalid]="phone.invalid && phone.touched" class="form-control" ngModel>
+                <div class="text-danger" *ngIf="phone.invalid && phone.touched">
+                    <small *ngIf="phone.errors.required">Phone Number is required</small>
+                    <small *ngIf="phone.errors.pattern">must start with 6,7,8 or 9 and contains 10 digits</small>
+                </div>
+            </div>
+        </td>
+      </tr>
+      <tr>
+        <td scope="row">Enter Email Id </td>
+        <td>
+            <div class="form-group">
+                <input type="email" #email="ngModel" required pattern="^[a-zA-Z0-9]{5,15}@gmail.com$" name="email"
+                [class.is-invalid]="email.invalid && email.touched" class="form-control" ngModel>
+                <div class="text-danger" *ngIf="email.invalid && email.touched">
+                    <small *ngIf="email.errors.required">Phone Number is required</small>
+                    <small *ngIf="email.errors.pattern">must start with 6,7,8 or 9 and contains 10 digits</small>
+                </div>
+            </div>
+        </td>
+      </tr>
+      <tr>
+        <td scope="row">Enter Password </td>
+        <td>
+            <div class="form-group">
+                <input type="password" #password="ngModel" required pattern="^[a-zA-Z0-9]{5,15}$" name="password"
+                [class.is-invalid]="password.invalid && password.touched" class="form-control" ngModel>
+                <div class="text-danger" *ngIf="password.invalid && password.touched">
+                    <small *ngIf="password.errors.required">password is required</small>
+                    <small *ngIf="password.errors.pattern">do not contain any special character contains atleast 5 character</small>
+                </div>
+            </div>
+        </td>
+      </tr>
+      <tr>
+        <td scope="row">Confirm Password </td>
+        <td>
+            <div class="form-group">
+                <input type="password" required #cPassword="ngModel" pattern="^{{password.value}}$" 
+                [class.is-invalid]="cPassword.invalid && cPassword.touched"class="form-control"
+                 name="cPassword" ngModel>
+                 <div class="text-danger" *ngIf="cPassword.invalid && cPassword.touched">
+                    <small *ngIf="cPassword.errors.required">password is required</small>
+                    <small *ngIf="cPassword.errors.pattern">Password didn't match</small>
+                </div>
+            </div>
+        </td>
+      </tr>
+      
+      <tr>
+        <td colspan="2" style="text-align:center;">
+            <button class="btn btn-outline-success" type="submit" [disabled]="name.invalid || phone.invalid || email.invalid || password.invalid || cPassword.invalid">Submit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+</div> 
+</div> -->
+
+<!-- <div *ngIf="addedUser!==null">
+    <h4 class="text-success" style="text-align: center;">User Added Successfully</h4> 
+    <table  class="table table-borderless table-sm" style="margin: auto;width: 30% !important; ">
+    <tbody>
+      <tr>
+        <td scope="row">User Id : </td>
+        <td>
+            {{addedUser.userId}}
+        </td>
+      </tr>
+      <tr>
+        <td scope="row">User Name : </td>
+        <td>
+            {{addedUser.userName}}
+        </td>
+      </tr>
+      <tr>
+        <td scope="row">PhoneNumber : </td>
+        <td>
+            {{addedUser.phoneNumber}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="flag" style="text-align: center;" class="text-danger">
+    {{errormsg}}
+</div>  -->
+
+
+
+
+
+<!-- 
+<div>
+    <h1>User Registration</h1>
+    
+    <form #userForm="ngForm"  (ngSubmit)="addUser(userForm)" novalidate>
+       
+        
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" #name="ngModel" pattern="^[a-zA-Z\\.\\ ]{2,}$" required name="name"
+            [class.is-invalid]="name.invalid && name.touched" class="form-control" ngModel>
+            <div class="text-danger" *ngIf="name.invalid && name.touched">
+                <small *ngIf="name.errors.required">Name is required</small>
+                <small *ngIf="name.errors.pattern">Name must contain atleast two letters</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" #password="ngModel" required pattern="^[a-zA-Z0-9]{5,15}$" name="password"
+            [class.is-invalid]="password.invalid && password.touched" class="form-control" ngModel>
+            <div class="text-danger" *ngIf="password.invalid && password.touched">
+                <small *ngIf="password.errors.required">password is required</small>
+                <small *ngIf="password.errors.pattern">do not contain any special character contains atleast 5 character</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" required #cpassword="ngModel" pattern="^{{password.value}}$" 
+            [class.is-invalid]="cpassword.invalid && cpassword.touched"class="form-control"
+             name="cpassword" ngModel>
+             <div class="text-danger" *ngIf="cpassword.invalid && cpassword.touched">
+                <small *ngIf="cpassword.errors.required">password is required</small>
+                <small *ngIf="cpassword.errors.pattern">Password didn't match</small>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" #phone="ngModel" required pattern="^[6789]{1}[0-9]{9}$" name="phone"
+            [class.is-invalid]="phone.invalid && phone.touched" class="form-control" ngModel>
+            <div class="text-danger" *ngIf="phone.invalid && phone.touched">
+                <small *ngIf="phone.errors.required">Phone Number is required</small>
+                <small *ngIf="phone.errors.pattern">must start with 6,7,8 or 9 and contains 10 digits</small>
+            </div>
+        </div>
+        
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<div *ngIf="addedUser!==null">
+    <h3>User Added</h3>  
+    id={{addedUser.userId}}<br>
+    name= {{addedUser.userName}}<br>
+    phoneNumber={{addedUser.phoneNumber}}<br>
+</div>
+<div *ngIf="flag">
+    {{errormsg}}
+</div> -->
+    
+
+ <!-- {{ userForm.value | json }} -->
+              <!-- name="name" -->
+            <!-- {{name.invalid  && name.touched}} -->
+            <!-- <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is Required</small> -->
+                    <!-- {{name.valid}} -->

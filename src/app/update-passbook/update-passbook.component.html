@@ -1,0 +1,24 @@
+<div class="container col-md-6">
+    <br>
+    <h3 class="text-center"><u>Update Passbook</u></h3>
+    <br>
+    <form (ngSubmit)="update()" #form="ngForm">
+        <div class="form-group">
+            <label><strong><em>Customer id:</em></strong> </label>
+            <input required type="text" #accountIdRef="ngModel" pattern=[0-9]* minlength="12" maxlength="12"
+                placeholder="Enter ID" name="accountId" [(ngModel)]="accountId" class="form-control" required />
+
+            <div *ngIf='accountIdRef.errors && accountIdRef.touched' class="invalid-feedback ">
+                <div [hidden]='!accountIdRef.errors.required'> Provide Employee Id </div>
+                <div *ngIf='accountIdRef.errors.pattern'>Account Id should be only numbers</div>
+                <div *ngIf='accountIdRef.errors.minlength'>Account Id should be of 12 digits</div>
+                <div *ngIf='accountIdRef.errors.maxlength'>Account Id should be of 12 digits</div>
+            </div>
+
+        </div>
+        <input [disabled]="form.invalid" type="submit" value="submit" class="btn btn-success">
+    </form>
+
+
+</div>
+<br>
